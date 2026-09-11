@@ -1007,6 +1007,19 @@ a:focus-visible {
     padding-top: 4rem;
     min-height: auto;
   }
+  .campaign-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .campaign-card {
+    padding: 0.75rem;
+  }
+  .campaign-surface {
+    min-height: 14rem;
+  }
+  .campaign-surface-video {
+    min-height: 24rem;
+  }
   .video-section {
     margin-top: -0.4rem;
     padding-top: 0.6rem;
