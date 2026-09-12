@@ -52,10 +52,11 @@
           <div class="grain"></div>
         </div>
 
-        <div class="hero-media" aria-hidden="true">
-          <div class="hero-video-wrap">
+        <!-- Hero Motion -->
+        <div class="hero-motion" aria-hidden="true">
+          <div class="hero-motion-wrap">
             <video
-              class="hero-video"
+              class="hero-motion-visual"
               muted
               loop
               autoplay
@@ -63,8 +64,8 @@
               poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23060d0b'/%3E%3Cstop offset='0.5' stop-color='%230d1d1a'/%3E%3Cstop offset='1' stop-color='%23101515'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23bg)'/%3E%3Ccircle cx='1100' cy='260' r='260' fill='%231a473e' fill-opacity='.5'/%3E%3Ccircle cx='460' cy='640' r='360' fill='%230d5650' fill-opacity='.28'/%3E%3Cpath d='M0 700C280 630 390 560 560 590C718 620 786 710 960 700C1160 690 1280 560 1600 620V900H0Z' fill='%230f1917' fill-opacity='.9'/%3E%3C/svg%3E"
             ></video>
           </div>
-          <div class="media-overlay"></div>
-        </div>
+          <div class="motion-overlay"></div>
+        </div> 
 
         <div class="hero-content">
           <p class="eyebrow">Global AI education</p>
@@ -78,13 +79,13 @@
 
           <div class="hero-actions">
             <a class="button button-primary" href="#final-cta">Explore AIVERA</a>
-            <a class="button button-secondary" href="#course">Watch Video</a>
+            <a class="button button-secondary" href="#film">Watch Film</a>
           </div>
         </div>
       </section>
 
       <!-- Video -->
-      <section class="video-section section-spacing reveal" id="course">
+      <section class="video-section section-spacing reveal" id="film">
         <div class="container">
           <div class="video-header">
             <p class="kicker">AIVERA</p>
@@ -92,14 +93,16 @@
           </div>
 
           <div class="video-shell" aria-label="Campaign film placeholder">
-            <video id="campaign-video" preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='bg2' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23070d0b'/%3E%3Cstop offset='0.5' stop-color='%23131f1d'/%3E%3Cstop offset='1' stop-color='%23070b0b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23bg2)'/%3E%3Ccircle cx='1220' cy='220' r='210' fill='%23236156' fill-opacity='.45'/%3E%3Ccircle cx='420' cy='710' r='300' fill='%2311332e' fill-opacity='.42'/%3E%3Crect x='220' y='200' width='1160' height='520' rx='24' fill='%230e1615' fill-opacity='.72' stroke='%23aebfb6' stroke-opacity='.45'/%3E%3Cpath d='M370 640L670 430L760 510L1030 300L1230 635Z' fill='none' stroke='%23edf4f1' stroke-opacity='.7' stroke-width='8' stroke-linejoin='round'/%3E%3C/svg%3E"></video>
+            <video id="campaign-video" preload="auto" playsinline>
+              <source src="video/AIVERA Intro.mp4" type="video/mp4" />
+            </video>
             <div class="video-overlay" aria-hidden="true">
               <button class="play-button" type="button" aria-label="Play video preview">
                 <span class="play-icon"></span>
               </button>
               <div class="video-overlay-copy">
                 <span>Film</span>
-                <strong>The next generation of work</strong>
+                <strong>Education Reimagined as cinema</strong>
               </div>
             </div>
           </div>

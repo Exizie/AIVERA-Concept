@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const video = document.getElementById('campaign-video');
   const campaignVideo = document.getElementById('campaign-card-video');
   const playButton = document.querySelector('.play-button');
-  const watchVideoLink = document.querySelector('a[href="#course"]');
+  const watchVideoLink = document.querySelector('a[href="#film"]');
   const ctaForm = document.querySelector('.cta-form');
   const ctaEmail = document.getElementById('lead-email');
   const statusBox = document.querySelector('.form-status');
@@ -25,6 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       element.pause();
       element.currentTime = 0;
+    } catch (error) {
+    }
+  };
+
+  const pauseMedia = (element) => {
+    if (!element) return;
+
+    try {
+      element.pause();
     } catch (error) {
     }
   };
@@ -126,18 +135,46 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const stopVideo = () => {
-      stopMedia(video);
+      pauseMedia(video);
       videoShell.classList.remove('is-playing');
     };
 
+    const previewVideo = () => {
+      try {
+        video.pause();
+        video.currentTime = 0;
+      } catch (error) {
+      }
+      videoShell.classList.remove('is-playing');
+    };
+
+    const toggleVideo = () => {
+      if (video.paused) {
+        startVideo();
+      } else {
+        stopVideo();
+      }
+    };
+
+    video.muted = false;
+    video.volume = 1;
+    video.addEventListener('loadeddata', previewVideo);
+    video.addEventListener('loadedmetadata', previewVideo);
+    previewVideo();
+
     if (playButton) {
-      playButton.addEventListener('click', startVideo);
+      playButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleVideo();
+      });
     }
+
+    video.addEventListener('click', toggleVideo);
 
     if (watchVideoLink) {
       watchVideoLink.addEventListener('click', (event) => {
         event.preventDefault();
-        document.getElementById('course')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.getElementById('film')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         setTimeout(() => startVideo(), 220);
       });
     }
