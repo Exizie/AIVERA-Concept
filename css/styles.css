@@ -9,7 +9,7 @@
   --text-soft: rgba(228, 236, 231, 0.8);
   --text-muted: rgba(168, 181, 174, 0.72);
   --text-faint: rgba(164, 177, 170, 0.52);
-  --serif: "Georgia", "Times New Roman", serif;
+  --serif: "Roboto Slab", Georgia, serif;
   --sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --section-title-size: clamp(2.2rem, 1.7rem + 1.5vw, 4.7rem);
   --container: min(1180px, calc(100vw - 2.5rem));
@@ -30,7 +30,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: var(--sans);
+  font-family: var(--serif);
   color: var(--text);
   background: var(--bg);
   line-height: 1.5;
