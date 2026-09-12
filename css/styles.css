@@ -1091,3 +1091,9 @@ a:focus-visible {
  color:red;
  font-weight: bold;
 }
+
+.info {
+  font-size: 1.4rem;
+  margin-top: -3.5rem;
+  margin-bottom: 1rem;
+}
