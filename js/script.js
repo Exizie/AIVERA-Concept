@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealItems = document.querySelectorAll('.reveal');
   const videoShell = document.querySelector('.video-shell');
   const video = document.getElementById('campaign-video');
+  const campaignVideo = document.getElementById('campaign-card-video');
   const playButton = document.querySelector('.play-button');
   const watchVideoLink = document.querySelector('a[href="#course"]');
   const ctaForm = document.querySelector('.cta-form');
@@ -18,7 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Header treatment on scroll.
+  const stopMedia = (element) => {
+    if (!element) return;
+
+    try {
+      element.pause();
+      element.currentTime = 0;
+    } catch (error) {
+    }
+  };
+
+  // Sticky header
   const setHeaderState = () => {
     if (!header) return;
     header.classList.toggle('scrolled', window.scrollY > 10);
@@ -35,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Mobile navigation.
+  // Mobile menu
   if (navToggle && mainNav) {
     navToggle.addEventListener('click', () => {
       const isOpen = mainNav.classList.toggle('is-open');
@@ -50,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Very lightweight cursor-follow glow layered above the page content.
+  // Cursor glow
   const cursorGlow = document.querySelector('.cursor-glow');
 
   if ((cursorGlow || hero) && !prefersReducedMotion) {
@@ -82,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('pointermove', updateGlow, { passive: true });
   }
 
-  // Reveal sections as they enter the viewport.
+  // Reveal on scroll
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -101,10 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
     revealItems.forEach((item) => item.classList.add('is-visible'));
   }
 
-  // Hero video controls.
+  // Hero video
   if (video && videoShell) {
     const startVideo = () => {
+      stopMedia(campaignVideo);
       videoShell.classList.add('is-playing');
+
       if (video.src || video.querySelector('source')) {
         video.play().catch(() => {
           videoShell.classList.remove('is-playing');
@@ -113,12 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const stopVideo = () => {
-      try {
-        video.pause();
-        video.currentTime = 0;
-      } catch (error) {
-        // No-op; offline-safe assets may not produce a playable media stream.
-      }
+      stopMedia(video);
       videoShell.classList.remove('is-playing');
     };
 
@@ -137,7 +145,24 @@ document.addEventListener('DOMContentLoaded', () => {
     video.addEventListener('ended', stopVideo);
   }
 
-  // Interactive typographic states for the shift section.
+  if (campaignVideo) {
+    campaignVideo.muted = false;
+    campaignVideo.volume = 1;
+
+    campaignVideo.addEventListener('click', async () => {
+      if (campaignVideo.paused) {
+        try {
+          await campaignVideo.play();
+        } catch (error) {
+          // Ignore autoplay restrictions.
+        }
+      } else {
+        campaignVideo.pause();
+      }
+    });
+  }
+
+  // Tab switcher
   switcherTabs.forEach((tab) => {
     tab.addEventListener('click', () => {
       const panelName = tab.dataset.panel;
@@ -154,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Progressive focus treatment for the journey timeline.
+  // Journey scroll state
   if (journeySteps.length) {
     const revealJourney = () => {
       const viewportMiddle = window.innerHeight * 0.55;
@@ -170,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealJourney, { passive: true });
   }
 
-  // Successful submit state; browser handles native email validation.
+  // Submit state
   if (ctaForm && ctaEmail && statusBox) {
     ctaForm.addEventListener('submit', (event) => {
       event.preventDefault();

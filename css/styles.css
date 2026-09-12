@@ -1,6 +1,4 @@
-/* ---------------------------------
-   Base
-   --------------------------------- */
+/* Base */
 :root {
   --bg: #050b09;
   --green: #9feec9;
@@ -109,9 +107,7 @@ a:focus-visible {
   border: 0;
 }
 
-/* ---------------------------------
-   Navigation
-   --------------------------------- */
+/* Navigation */
 .site-header {
   position: sticky;
   top: 0;
@@ -218,9 +214,7 @@ a:focus-visible {
   margin: 0.32rem 0;
 }
 
-/* ---------------------------------
-   Hero
-   --------------------------------- */
+/* Hero */
 .hero {
   position: relative;
   padding-top: clamp(1.5rem, 1vw + 1rem, 3rem);
@@ -396,9 +390,7 @@ a:focus-visible {
   100% { transform: translateX(-18px); opacity: 0.2; }
 }
 
-/* ---------------------------------
-   The Shift
-   --------------------------------- */
+/* Shift */
 .section-spacing { padding: 3.5rem 0; }
 
 .editorial-block { position: relative; }
@@ -517,9 +509,7 @@ a:focus-visible {
   line-height: 1.7;
 }
 
-/* ---------------------------------
-   AIVERA
-   --------------------------------- */
+/* AIVERA */
 .difference {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -609,9 +599,7 @@ a:focus-visible {
   line-height: 1.8;
 }
 
-/* ---------------------------------
-   Campaign content
-   --------------------------------- */
+/* Campaign */
 .campaign {
   border-top: 1px solid var(--line);
 }
@@ -739,12 +727,14 @@ a:focus-visible {
   background: rgba(8, 13, 12, 0.9);
   filter: saturate(0.75) contrast(1.08) brightness(0.55);
   opacity: 0.9;
+  cursor: pointer;
 }
 
 .campaign-surface-video span {
   position: absolute;
   inset: auto 0 1.2rem 0;
   text-align: center;
+  pointer-events: none;
 }
 
 @keyframes pulseGlow {
@@ -752,9 +742,7 @@ a:focus-visible {
   50% { opacity: 1; transform: scale(1.06); }
 }
 
-/* ---------------------------------
-   Video
-   --------------------------------- */
+/* Video */
 .video-section {
   position: relative;
   margin-top: -1.4rem;
@@ -858,9 +846,7 @@ a:focus-visible {
   font-weight: 500;
 }
 
-/* ---------------------------------
-   CTA
-   --------------------------------- */
+/* CTA */
 .final-shell {
   padding: 4.4rem 2.3rem;
   border: 1px solid var(--line);
@@ -911,9 +897,7 @@ a:focus-visible {
   color: var(--text);
 }
 
-/* ---------------------------------
-   Footer
-   --------------------------------- */
+/* Footer */
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 2rem 0 2.5rem;
@@ -977,9 +961,7 @@ a:focus-visible {
   transform: translateY(0);
 }
 
-/* ---------------------------------
-   Responsive
-   --------------------------------- */
+/* Responsive */
 @media (max-width: 980px) {
   .topbar { grid-template-columns: 1fr auto; }
   .nav-panel { position: relative; justify-self: end; }
