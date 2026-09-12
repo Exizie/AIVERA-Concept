@@ -11,6 +11,7 @@
   --text-faint: rgba(164, 177, 170, 0.52);
   --serif: "Georgia", "Times New Roman", serif;
   --sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --section-title-size: clamp(2.2rem, 1.7rem + 1.5vw, 4.7rem);
   --container: min(1180px, calc(100vw - 2.5rem));
   --transition: 500ms cubic-bezier(0.22, 1, 0.36, 1);
   --hero-x: 50%;
@@ -329,8 +330,8 @@ a:focus-visible {
   max-width: 660px;
   color: var(--text);
   font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(3rem, 2.3rem + 2vw, 5.7rem);
+  font-weight: 400;
+  font-size: var(--section-title-size);
   line-height: 0.9;
   letter-spacing: -0.065em;
   text-shadow: 0 0 22px rgba(237, 244, 241, 0.08);
@@ -411,13 +412,13 @@ a:focus-visible {
 .final-shell h2 {
   margin: 0;
   font-family: var(--serif);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.05em;
   color: var(--text);
 }
 
 .editorial-headline-wrap h2 {
-  font-size: clamp(2.8rem, 2.3rem + 2vw, 5rem);
+  font-size: var(--section-title-size);
   line-height: 0.9;
 }
 
@@ -494,8 +495,8 @@ a:focus-visible {
   margin: 0;
   color: var(--text);
   font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(2.3rem, 1.8rem + 1vw, 3.6rem);
+  font-weight: 400;
+  font-size: var(--section-title-size);
   letter-spacing: -0.05em;
   line-height: 0.96;
 }
@@ -515,7 +516,7 @@ a:focus-visible {
 }
 
 .difference-title {
-  font-size: clamp(3rem, 2.1rem + 2vw, 6rem);
+  font-size: var(--section-title-size);
   line-height: 0.9;
   margin-top: 0.9rem;
 }
@@ -525,8 +526,8 @@ a:focus-visible {
   max-width: 58rem;
   color: var(--text-soft);
   font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(2rem, 1.5rem + 1.6vw, 4rem);
+  font-weight: 400;
+  font-size: var(--section-title-size);
   line-height: 1;
   letter-spacing: -0.05em;
 }
@@ -611,8 +612,8 @@ a:focus-visible {
 .campaign-intro h2 {
   margin: 0;
   font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(3rem, 2.2rem + 2vw, 5.4rem);
+  font-weight: 400;
+  font-size: var(--section-title-size);
   line-height: 0.9;
   letter-spacing: -0.06em;
   color: var(--text);
@@ -798,7 +799,7 @@ a:focus-visible {
 }
 
 .video-header h2 {
-  font-size: clamp(2.8rem, 2rem + 2vw, 5.5rem);
+  font-size: var(--section-title-size);
   line-height: 0.9;
 }
 
@@ -905,7 +906,7 @@ a:focus-visible {
 }
 
 .final-shell h2 {
-  font-size: clamp(2.9rem, 2.1rem + 2vw, 5.2rem);
+  font-size: var(--section-title-size);
   line-height: 0.9;
   margin-top: 0.8rem;
 }
