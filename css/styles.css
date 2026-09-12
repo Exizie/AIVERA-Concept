@@ -438,8 +438,9 @@ a:focus-visible {
 .switcher-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
-  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(0.75rem, 1vw, 0.75rem);
+  align-items: center;
 }
 
 .switcher-tab {
@@ -1086,7 +1087,6 @@ a:focus-visible {
   }
 }
 
-
 /* Utility Classes */
 .contact-me {
  color:red;
@@ -1094,7 +1094,10 @@ a:focus-visible {
 }
 
 .info {
-  font-size: 1rem;
-  margin-top: -7.5rem;
+  margin-top: -5rem;
   margin-bottom: 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
