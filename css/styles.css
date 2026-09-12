@@ -312,7 +312,7 @@ a:focus-visible {
   flex-direction: column;
   justify-content: center;
   max-width: 63rem;
-  padding-top: 4rem;
+  padding-top: -1rem;
   padding-bottom: 2rem;
 }
 
@@ -1094,8 +1094,9 @@ a:focus-visible {
 }
 
 .info {
-  margin-top: -5rem;
+  margin-top: -1rem;
   margin-bottom: 1rem;
+  margin-left: 0.2rem;
   font-size: 0.7rem;
   letter-spacing: 0.34em;
   text-transform: uppercase;
