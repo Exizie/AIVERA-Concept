@@ -135,7 +135,9 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 0.14em;
+  font-family: "Josefin Sans", "Segoe UI", sans-serif;
   font-size: clamp(1.15rem, 0.9rem + 0.45vw, 1.7rem);
+  font-weight: 500;
   letter-spacing: 0.44em;
   text-transform: uppercase;
   color: var(--text);
@@ -919,7 +921,7 @@ a:focus-visible {
 .footer-brand {
   font-size: clamp(2.1rem, 1.4rem + 1.3vw, 3.6rem);
   letter-spacing: -0.07em;
-  font-family: var(--serif);
+  font-family: "Josefin Sans", "Segoe UI", sans-serif;
   line-height: 1;
 }
 
