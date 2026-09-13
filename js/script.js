@@ -8,7 +8,7 @@ setTimeout(() => {
   console.log('AFTER 1500MS:', window.scrollY);
 }, 1500);
   const header = document.querySelector('.site-header');
-  const topLinks = document.querySelectorAll('a[href="#top"]');
+  const pageLinks = document.querySelectorAll('a[href^="#"]');
   const navToggle = document.querySelector('.nav-toggle');
   const mainNav = document.querySelector('.main-nav');
   const revealItems = document.querySelectorAll('.reveal');
@@ -55,11 +55,25 @@ setTimeout(() => {
   setHeaderState();
   window.addEventListener('scroll', setHeaderState, { passive: true });
 
- topLinks.forEach((link) => {
+pageLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
+    const targetId = link.getAttribute('href');
+    const target = document.querySelector(targetId);
+
+    if (!target) return;
+
     event.preventDefault();
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-    window.history.replaceState(null, '', window.location.pathname + window.location.search);
+
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+
+    window.history.replaceState(
+      null,
+      '',
+      window.location.pathname + window.location.search
+    );
   });
 });
 
