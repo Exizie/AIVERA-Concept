@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-anchor: none;
 }
 
 body {
@@ -1002,11 +1003,12 @@ a:focus-visible {
   text-transform: uppercase;
 }
 
+
 .reveal {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 480ms ease, transform 480ms ease;
-}
+} 
 
 .reveal.is-visible {
   opacity: 1;
@@ -1101,4 +1103,8 @@ a:focus-visible {
   letter-spacing: 0.34em;
   text-transform: uppercase;
   color: var(--text-muted);
+}
+
+.animate-text {
+    display: inline-block;
 }

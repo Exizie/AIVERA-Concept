@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('LOAD SCROLL:', window.scrollY);
+  setTimeout(() => {
+  console.log('AFTER 500MS:', window.scrollY);
+}, 500);
+
+setTimeout(() => {
+  console.log('AFTER 1500MS:', window.scrollY);
+}, 1500);
   const header = document.querySelector('.site-header');
   const topLinks = document.querySelectorAll('a[href="#top"]');
   const navToggle = document.querySelector('.nav-toggle');
@@ -119,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealItems.forEach((item) => revealObserver.observe(item));
   } else {
     revealItems.forEach((item) => item.classList.add('is-visible'));
-  }
+  } 
 
   // Hero video
   if (video && videoShell) {
