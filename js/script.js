@@ -55,13 +55,13 @@ setTimeout(() => {
   setHeaderState();
   window.addEventListener('scroll', setHeaderState, { passive: true });
 
-  topLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      window.history.replaceState(null, '', '#top');
-    });
+ topLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    window.history.replaceState(null, '', window.location.pathname + window.location.search);
   });
+});
 
   // Mobile menu
   if (navToggle && mainNav) {
@@ -224,7 +224,6 @@ setTimeout(() => {
     });
   });
 
-  // Journey scroll state
   if (journeySteps.length) {
     const revealJourney = () => {
       const viewportMiddle = window.innerHeight * 0.55;
@@ -253,4 +252,9 @@ setTimeout(() => {
       ctaForm.reset();
     });
   }
+});
+
+// Removes # to Anchor points
+window.addEventListener('hashchange', e => {
+    history.replaceState({}, "", location.hash.slice(1));
 });
