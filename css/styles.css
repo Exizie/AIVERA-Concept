@@ -24,12 +24,15 @@
 * { box-sizing: border-box; }
 
 html {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
   scroll-behavior: smooth;
   overflow-anchor: none;
 }
 
 body {
   margin: 0;
+  padding-top: 0 !important;
   min-height: 100vh;
   font-family: var(--serif);
   color: var(--text);
@@ -221,10 +224,11 @@ a:focus-visible {
 /* Hero */
 .hero {
   position: relative;
-  padding-top: clamp(1.5rem, 1vw + 1rem, 3rem);
+  padding-top: 0 !important;
   padding-bottom: 0.6rem;
   isolation: isolate;
   overflow: hidden;
+  margin-top: 0 !important;
 }
 
 .hero-scene {
@@ -311,9 +315,9 @@ a:focus-visible {
   min-height: min(620px, 72vh);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start !important;
   max-width: 63rem;
-  padding-top: -1rem;
+  padding-top: 0rem;
   padding-bottom: 2rem;
 }
 
@@ -1040,7 +1044,7 @@ a:focus-visible {
 
 @media (max-width: 760px) {
   .hero-content {
-    padding-top: 4rem;
+    padding-top: 0rem;
     min-height: auto;
   }
   .campaign-grid {
