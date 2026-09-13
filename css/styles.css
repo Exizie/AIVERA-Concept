@@ -187,6 +187,7 @@ a:focus-visible {
 .footer-social a:focus-visible { color: var(--text); }
 
 .nav-cta {
+  grid-column: 3;
   justify-self: end;
   padding: 0.92rem 1.2rem;
   border: 1px solid var(--line-strong);
